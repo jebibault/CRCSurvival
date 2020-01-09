@@ -7,7 +7,7 @@ from app import app
 layout = [dcc.Markdown("""
 ### Metrics
 
-Evaluating models trained on unbalanced class can be difficult. We provide several methods to assess the performances 
+Evaluating models trained on unbalanced classes can be difficult. We provide several methods to assess the performances 
 of the model. All metrics are reported on the test dataset.
 
 Accuracy: 91.19%
