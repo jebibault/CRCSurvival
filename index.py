@@ -7,6 +7,8 @@ from tabs import intro, predict, explain, evaluate
 
 style = {'maxWidth': '960px', 'margin': 'auto'}
 
+app.title = 'Predict 10-year overall survival in prostate cancer patients'
+
 app.layout = html.Div([
     dcc.Markdown('# Predict 10-year overall survival in prostate cancer'),
     dcc.Tabs(id='tabs', value='tab-intro', children=[
