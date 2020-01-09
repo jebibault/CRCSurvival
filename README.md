@@ -19,9 +19,9 @@ model - the model directory
 tabs - the tabs directory
 
 - intro.py - The code for the intro tab.
-- explain.py - The code for the 'How was this model created?' tab.
-- evaluate.py - The code for the 'How was accurate is this model?' tab.
-- predict.py - The code for the predict tab.
+- explain.py - The code for the 'Creation' tab.
+- evaluate.py - The code for the 'Model performances' tab.
+- predict.py - The code for the 'Predict' tab.
 
 main app
 
