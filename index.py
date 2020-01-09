@@ -9,6 +9,13 @@ style = {'maxWidth': '960px', 'margin': 'auto'}
 
 app.title = 'Prostate cancer survival prediction with AI'
 
+app.head = [
+    html.Link(
+        href='https://www.stanford.edu/favicon.ico',
+        rel='icon'
+    ),
+]
+
 app.layout = html.Div([
     html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true'),
     #html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true'),
