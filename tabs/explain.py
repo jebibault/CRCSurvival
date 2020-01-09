@@ -20,7 +20,7 @@ Results of the trial were published in three articles:
 - https://www.ncbi.nlm.nih.gov/pubmed/22228146
 - https://www.ncbi.nlm.nih.gov/pubmed/27911486
 
-#### The Data and Evaluation Protocol
+#### Data
 The data with 13 years median follow-up was obtained from the National Cancer Institute Cancer Data Access System:
 https://cdas.cancer.gov/plco/
 
