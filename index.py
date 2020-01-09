@@ -7,14 +7,15 @@ from tabs import intro, predict, explain, evaluate
 
 style = {'maxWidth': '960px', 'margin': 'auto'}
 
-app.title = 'Predict 10-year overall survival in prostate cancer patients'
+app.title = 'Prostate cancer survival prediction with AI'
 
 app.layout = html.Div([
-    dcc.Markdown('# Predict 10-year overall survival in prostate cancer'),
+    dcc.Markdown('# Prostate cancer survival prediction with AI'),
+    dcc.markdown("""This AI allows you to predict 10-year overall survival in patients with prostate cancer.
     dcc.Tabs(id='tabs', value='tab-intro', children=[
         dcc.Tab(label='Introduction', value='tab-intro'),
-        dcc.Tab(label='Creation', value='tab-explain'),
-        dcc.Tab(label='Model performances', value='tab-evaluate'),
+        dcc.Tab(label='Methods', value='tab-explain'),
+        dcc.Tab(label='Performances', value='tab-evaluate'),
         dcc.Tab(label='Predict', value='tab-predict')
     ]),
     html.Div(id='tabs-content'),
