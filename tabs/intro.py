@@ -5,9 +5,7 @@ import dash_html_components as html
 from app import app
 
 layout = [
-  html.Div(html.P([html.Br()])),
-	html.Div(html.P([html.Br()])),
-  dcc.Markdown("""
+	dcc.Markdown("""
 The management of prostate cancer that is detected on the basis of prostate-specific antigen (PSA) levels remains controversial. In the United States alone, each year, an estimated 180,890 new 
 cases will be diagnosed and 26,120 men will die from the disease. PSA testing has resulted in a significant increase in the diagnosis and treatment of prostate cancer, but many men do not benefit
 from intervention because the disease is either indolent or disseminated at diagnosis. Prostate cancer often progresses slowly, and many men die of competing causes. 
