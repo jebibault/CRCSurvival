@@ -19,7 +19,7 @@ Results of the trial were published in three articles:
 
 #### Data
 The data with a 13-years median follow-up was obtained from the National Cancer Institute Cancer Data Access System:
-https://cdas.cancer.gov/plco/
+- https://cdas.cancer.gov/plco/
 
 #### Model Creation
 To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=13,738). 
