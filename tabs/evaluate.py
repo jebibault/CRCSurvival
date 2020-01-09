@@ -23,6 +23,6 @@ False Discovery Rate: 16.97%
 AUC: 92.04%
 """),
 
-html.Img(src='https://raw.githubusercontent.com/jebibault/ProstateCancerSurvival/master/figures/10yOSConfusionMatrix.png'),
-html.Img(src='https://raw.githubusercontent.com/jebibault/ProstateCancerSurvival/master/figures/10yOSROC.png'),
-html.Img(src='https://raw.githubusercontent.com/jebibault/ProstateCancerSurvival/master/figures/10yOS.png')]
+html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOSConfusionMatrix.png?raw=true'),
+html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOSROC.png?raw=true'),
+html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOS.png?raw=true')]
