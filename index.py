@@ -11,7 +11,8 @@ app.layout = html.Div([
     dcc.Markdown('# Predict 10-year overall survival in prostate cancer'),
     dcc.Tabs(id='tabs', value='tab-intro', children=[
         dcc.Tab(label='Introduction', value='tab-intro'),
-        dcc.Tab(label='How was this model built? How accurate is it?', value='tab-explain'),
+        dcc.Tab(label='How was this model built?', value='tab-explain'),
+        dcc.Tab(label='How accurate is this model?', value='tab-evaluate'),
         dcc.Tab(label='Predict', value='tab-predict')
     ]),
     html.Div(id='tabs-content'),
