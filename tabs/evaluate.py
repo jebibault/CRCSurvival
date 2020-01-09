@@ -19,18 +19,9 @@ layout = html.Div([
 		| PR AUC       | 84.88%    |
 
 	"""),
-	html.Img(
-		src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOSConfusionMatrix.png?raw=true',
-	),
-	dcc.Markdown("""
-		ROC AUC:
-		"""),
-	html.Img(
-		src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOSROC.png?raw=true'
-	),
-	dcc.Markdown("""
-		Precision Recall AUC:
-		"""),
-	html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOS.png?raw=true'
-	)
-], style={'text-align':'center'})
+	html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOSConfusionMatrix.png?raw=true'),
+	dcc.Markdown("""ROC AUC:"""),
+	html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOSROC.png?raw=true'),
+	dcc.Markdown("""Precision Recall AUC:"""),
+	html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOS.png?raw=true')],
+	style={'text-align':'center'})
