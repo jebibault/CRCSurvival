@@ -11,7 +11,7 @@ app.title = 'Prostate cancer survival prediction with AI'
 
 app.layout = html.Div([
     dcc.Markdown('# Prostate cancer survival prediction with AI'),
-    dcc.markdown("""This AI allows you to predict 10-year overall survival in patients with prostate cancer.
+    dcc.markdown("""This AI allows you to predict 10-year overall survival in patients with prostate cancer."""),
     dcc.Tabs(id='tabs', value='tab-intro', children=[
         dcc.Tab(label='Introduction', value='tab-intro'),
         dcc.Tab(label='Methods', value='tab-explain'),
