@@ -9,13 +9,13 @@ dcc.Markdown("""
 	### Metrics
 	Evaluating models trained on unbalanced classes (the two classes we need to predict are not present in the dataset at the same ratio) can be difficult. We provide several methods to assess the performances of the model. All metrics are reported on the test dataset.
 
-		|  Metric      |  Result   |
-		|--------------|-----------|
-		| Accuracy     |  91.9%    |
-		| Precision    | 80.78%    |
-		| Recall       | 77.5%     |
-		| ROC AUC      | 92.04%    |
-		| PR AUC       | 84.88%    |
+	|  Metric      |  Result   |
+	|--------------|-----------|
+	| Accuracy     |  91.9%    |
+	| Precision    | 80.78%    |
+	| Recall       | 77.5%     |
+	| ROC AUC      | 92.04%    |
+	| PR AUC       | 84.88%    |
 
 	"""),
 dcc.Markdown("""
@@ -35,9 +35,9 @@ html.Div([
 	style={'text-align':'center'}),
 dcc.Markdown("""
 	#### Precision Recall AUC
+	A precision-recall curve is a plot of the precision (y-axis) and the recall (x-axis) for different probability thresholds.
 	- Precision is a metric that quantifies the number of correct positive predictions made. 
 	- Recall quantifies the number of correct positive predictions made out of all positive predictions that could have been made. 
-	A precision-recall curve is a plot of the precision (y-axis) and the recall (x-axis) for different probability thresholds.
 	The optimal value of the PR AUC is 1.
 	"""),
 html.Div([
