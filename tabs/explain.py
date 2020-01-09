@@ -6,8 +6,7 @@ from app import app
 
 layout = [dcc.Markdown("""
 #### The PLCO Trial
-The effect of screening with prostate-specific–antigen (PSA) testing and digital rectal examination on the rate of death
-from prostate cancer is unknown. The Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial was conducted
+The Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial was conducted
 to assess the role of prostate cancer screening on survival. From 1993 through 2001, 76,693 men at 10 
 U.S. study centers were randomized to receive either annual screening (38,343 subjects) or usual care as the control (38,350 subjects). 
 Men in the screening group were offered annual PSA testing for 6 years and digital rectal examination for 4 years. 
