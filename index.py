@@ -10,10 +10,9 @@ style = {'maxWidth': '960px', 'margin': 'auto'}
 app.layout = html.Div([
     dcc.Markdown('# Multiple Offer Calculator'),
     dcc.Tabs(id='tabs', value='tab-intro', children=[
-        dcc.Tab(label='Intro', value='tab-intro'),
-        dcc.Tab(label='Predict', value='tab-predict'),
+        dcc.Tab(label='Introduction', value='tab-intro'),
         dcc.Tab(label='Explain', value='tab-explain'),
-        dcc.Tab(label='Evaluate', value='tab-evaluate'),
+        dcc.Tab(label='Predict', value='tab-predict')
     ]),
     html.Div(id='tabs-content'),
 ], style=style)
