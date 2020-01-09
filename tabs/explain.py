@@ -5,26 +5,30 @@ import dash_html_components as html
 from app import app
 
 layout = [dcc.Markdown("""
-#### The Project Goal and Data
+#### The PLCO Trial
+The effect of screening with prostate-specific–antigen (PSA) testing and digital rectal examination on the rate of death
+from prostate cancer is unknown. This is the first report from the Prostate, Lung, Colorectal, and Ovarian (PLCO) 
+Cancer Screening Trial on prostate-cancer mortality. From 1993 through 2001, we randomly assigned 76,693 men at 10 
+U.S. study cen- ters to receive either annual screening (38,343 subjects) or usual care as the control (38,350 subjects). 
+Men in the screening group were offered annual PSA testing for 6 years and digital rectal examination for 4 years. 
+The subjects and health care providers received the results and decided on the type of follow-up evaluation. 
+Usual care sometimes included screening, as some organizations have recommend- ed. The numbers of all cancers 
+and deaths and causes of death were ascertained.
 
-The goal of the project is to predict the optimal offer for a single-family home in Marin county California
-in a multiple offer situation - a bidding war.  The key factors in determining the optimal offer include
-the area (city), the listing price, the number of bedrooms, the number of baths and the number of total expected
-offers.
+Results of the trial were published in three articles:
+- https://www.ncbi.nlm.nih.gov/pubmed/19297565
+- https://www.ncbi.nlm.nih.gov/pubmed/22228146
+- https://www.ncbi.nlm.nih.gov/pubmed/27911486
 
 #### The Data and Evaluation Protocol
-Since I have a real estate license I have access to the Marin MLS which I used to download 5 years (2015 – 2019)
-of single-family home sales with more than one offer.  The data was divided into training (2015 - 2017) with 2,973 sales,
-validation (2018) with 991 sales and test (2019) with 776 sales.  The test set contains about 11 months of data from 2019.
+The data with 13 years median follow-up was obtained from the National Cancer Institute Cancer Data Access System:
+https://cdas.cancer.gov/plco/
 
 #### Model Selection
-A simple linear regression was initially run with excellent results.  An XGBoost model was then run and had
-slightly better metrics and was therefore selected as the model.
+To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=13,738). 
+The dataset was split into a training (n=10,990) and a testing (n=2748) dataset.
 
-|           | Validation | Test     |
-|-----------|------------|----------|
-| MAE       | $71,851    | $68,002  |
-| R-Squared | 0.9726     | 0.9839   |
-
-
+XGBoost was used to predict 10-year overall survival. 
+Hyperparameters were tuned with Bayesian Optimization in a nested cross-validation manner. 
+Performances were evaluated on the test dataset.
 """)]
