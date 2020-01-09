@@ -24,11 +24,9 @@ Results of the trial were published in three articles:
 The data with 13 years median follow-up was obtained from the National Cancer Institute Cancer Data Access System:
 https://cdas.cancer.gov/plco/
 
-#### Model Selection
+#### Model Creation
 To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=13,738). 
 The dataset was split into a training (n=10,990) and a testing (n=2748) dataset.
-
-XGBoost was used to predict 10-year overall survival. 
-Hyperparameters were tuned with Bayesian Optimization in a nested cross-validation manner. 
-Performances were evaluated on the test dataset.
+XGBoost was used to predict 10-year overall survival. Hyperparameters were tuned with Bayesian Optimization 
+in a nested cross-validation manner. Performances were evaluated on the test dataset.
 """)]
