@@ -5,19 +5,24 @@ import dash_html_components as html
 from app import app
 
 layout = [dcc.Markdown("""
-### Final Results
+### Metrics
 
-The predictions were equal to or greater than the actual winning offer 53.48% of the time.
-Several metrics were calculated in order to evaluate the predictions versus the actuals:
+Evaluating models trained on unbalanced class can be difficult. We provide several methods to assess the performances 
+of the model. All metrics are reported on the test dataset.
 
-|  Metric      |  Result   |
-|--------------|-----------|
-| Median Error |  0.49%    |
-| Within 1%    | 14.69%    |
-| Within 5 %   | 69.72%    |
-| Within 10%   | 91.49%    |
-
-
+Accuracy: 91.19%
+f1 Score: 79.10%
+Average Precision: 84.88%
+Precision: 80.78%
+Negative Predictive Value: 91.05%
+Recall: 77.50%
+False Positive Rate: 8.95%
+Specificity: 91.05%
+False Negative Rate: 16.97%
+False Discovery Rate: 16.97%
+AUC: 92.04%
 """),
 
-html.Img(src='https://raw.githubusercontent.com/JimKing100/Multiple_Offers/master/data/prediction_errors.png')]
+html.Img(src='https://raw.githubusercontent.com/jebibault/ProstateCancerSurvival/master/figures/10yOSConfusionMatrix.png')]
+html.Img(src='https://raw.githubusercontent.com/jebibault/ProstateCancerSurvival/master/figures/10yOSROC.png')]
+html.Img(src='https://raw.githubusercontent.com/jebibault/ProstateCancerSurvival/master/figures/10yOS.png')]
