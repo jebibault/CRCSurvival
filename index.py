@@ -27,7 +27,7 @@ app.layout = html.Div([
     html.Div(id='tabs-content-classes'),
 ], style=style)
 
-@app.callback(Output('tabs-content', 'children'),
+@app.callback(Output('tabs-content-classes', 'children'),
               [Input('tabs', 'value')])
 def render_content(tab):
     if tab == 'tab-intro': return intro.layout
