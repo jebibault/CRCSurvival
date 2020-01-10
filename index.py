@@ -24,7 +24,7 @@ app.layout = html.Div([
 		html.Br(),
 		html.Br(),
 		html.Br()
-	])
+	]),
     #dcc.Markdown("""This model allows you to predict 10-year overall survival in patients with prostate cancer."""),
     dcc.Tabs(id='tabs', value='tab-intro', parent_className='custom-tabs', className='custom-tabs-container', children=[
         dcc.Tab(label='Introduction', value='tab-intro', className='custom-tab', selected_className='custom-tab--selected'),
