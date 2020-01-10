@@ -27,7 +27,7 @@ html.Div([
 	style={'text-align':'center'}),
 dcc.Markdown("""
 	#### ROC AUC
-	The ROC curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings.
+	The ROC curve is created by plotting the true positive rate (y-axis) and the false positive rate (x-axis) at various threshold settings.
 	It illustrates the diagnostic ability of the model as its discrimination threshold is varied. The optimal value of the AUC a model is 1.
 	"""),
 html.Div([
