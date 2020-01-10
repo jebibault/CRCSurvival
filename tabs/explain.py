@@ -15,8 +15,16 @@ layout = [
   Results of the trial were published in three articles:"""),
   dcc.Link('Andriole GL et al., New England Journal of Medicine, 2009', href='https://www.ncbi.nlm.nih.gov/pubmed/19297565', 
            style={'font-weight': 'bold', 'color': '#820000'}),
+  html.P([
+    html.Br(),
+		html.Br()
+	]),
   dcc.Link('Andriole GL et al., Journal of the National Cancer Institute, 2012', href='https://www.ncbi.nlm.nih.gov/pubmed/22228146', 
            style={'font-weight': 'bold', 'color': '#820000'}),
+  html.P([
+		html.Br(),
+		html.Br()
+	]),
   dcc.Link('Pinsky PF et al., Cancer, 2017', href='https://www.ncbi.nlm.nih.gov/pubmed/19297565', 
            style={'font-weight': 'bold', 'color': '#820000'}),
   dcc.Markdown("""#### Data
