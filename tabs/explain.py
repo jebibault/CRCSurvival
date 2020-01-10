@@ -18,26 +18,28 @@ layout = [
 		 href='https://www.ncbi.nlm.nih.gov/pubmed/19297565', 
 		 style={'font-weight': 'bold', 'color': '#820000'}),
 	
-	html.P([html.Br(),]),
+	html.P([]),
 	
 	dcc.Link('Andriole GL et al., Journal of the National Cancer Institute, 2012', 
 		 href='https://www.ncbi.nlm.nih.gov/pubmed/22228146', 
 		 style={'font-weight': 'bold', 'color': '#820000'}),
 	
-	html.P([html.Br()]),
+	html.P([]),
 	
 	dcc.Link('Pinsky PF et al., Cancer, 2017', href='https://www.ncbi.nlm.nih.gov/pubmed/19297565', 
 		 style={'font-weight': 'bold', 'color': '#820000'}),
 	
-	html.P([html.Br()]),
+	html.P([]),
 	
-	dcc.Markdown("""#### Data
+	dcc.Markdown("""
+	#### Data
 	The data with a 13-years median follow-up was obtained from the National Cancer Institute Cancer Data Access System:"""),
 	
 	dcc.Link('NCI CDAS', href='https://cdas.cancer.gov/plco/', 
 		 style={'font-weight': 'bold', 'color': '#820000'}),
 	
-	dcc.Markdown("""#### Model Creation
+	dcc.Markdown("""
+	#### Model Creation
 	To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=13,738). 
 	The dataset was split into a training (n=10,990) and a testing (n=2748) dataset.
 	XGBoost was used to predict 10-year overall survival. Hyperparameters were tuned with Bayesian Optimization 
