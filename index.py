@@ -26,7 +26,7 @@ app.layout = html.Div([
     ], colors={
         "border": "maroon",
         "primary": "white",
-        "background": "white"
+        "background": "silver"
     }),
     html.Div(id='tabs-content'),
 ], style=style)
