@@ -18,13 +18,13 @@ app.layout = html.Div([
             ),
     dcc.Markdown("# Predict prostate cancer survival with AI"),
     dcc.Markdown("""This model allows you to predict 10-year overall survival in patients with prostate cancer."""),
-    dcc.Tabs(id='tabs', value='tab-intro', children=[
-        dcc.Tab(label='Introduction', value='tab-intro'),
-        dcc.Tab(label='Methods', value='tab-explain'),
-        dcc.Tab(label='Performances', value='tab-evaluate'),
-        dcc.Tab(label='Predict', value='tab-predict')
+    dcc.Tabs(id='tabs', value='tab-intro', parent_className='custom-tabs', className='custom-tabs-container', children=[
+        dcc.Tab(label='Introduction', value='tab-intro', className='custom-tab', selected_className='custom-tab--selected'),
+        dcc.Tab(label='Methods', value='tab-explain', className='custom-tab', selected_className='custom-tab--selected'),
+        dcc.Tab(label='Performances', value='tab-evaluate', className='custom-tab', selected_className='custom-tab--selected'),
+        dcc.Tab(label='Predict', value='tab-predict', className='custom-tab', selected_className='custom-tab--selected')
     ]),
-    html.Div(id='tabs-content'),
+    html.Div(id='tabs-content-classes'),
 ], style=style)
 
 @app.callback(Output('tabs-content', 'children'),
