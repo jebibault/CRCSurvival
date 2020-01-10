@@ -19,7 +19,7 @@
     background-color: #fafbfc;
     padding: 12px !important;
     font-family: "system-ui";
-    /*display: flex !important;*/
+    display: flex !important;
     align-items: center;
     justify-content: center;
 }
