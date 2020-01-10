@@ -28,7 +28,7 @@ html.Div([
 dcc.Markdown("""
 	#### ROC AUC
 	The ROC curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings.
-	It illustrates the diagnostic ability of the model as its discrimination threshold is varied. The optimal value of the AUC a model is 1. An AUC of 0.5 shows a model has no classifying skill.
+	It illustrates the diagnostic ability of the model as its discrimination threshold is varied. The optimal value of the AUC a model is 1.
 	"""),
 html.Div([
 	html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOSROC.png?raw=true',
