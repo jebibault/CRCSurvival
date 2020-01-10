@@ -17,7 +17,11 @@ app.head = [
 ]
 
 app.layout = html.Div([
-    html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true'),
+    html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true',
+             style={
+                 "width": "100%"
+             }
+            ),
     dcc.Markdown("# Predict prostate cancer survival with AI"),
     dcc.Markdown("""This model allows you to predict 10-year overall survival in patients with prostate cancer."""),
     dcc.Tabs(id='tabs', value='tab-intro', children=[
