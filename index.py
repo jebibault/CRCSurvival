@@ -5,7 +5,9 @@ import dash_html_components as html
 from app import app, server
 from tabs import intro, predict, explain, evaluate
 
-style = {'maxWidth': '960px', 'margin': 'auto'}
+style = {
+    #'maxWidth': '960px', 
+    'margin': 'auto'}
 
 app.title = 'Prostate cancer survival prediction with AI'
 
