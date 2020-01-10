@@ -13,10 +13,13 @@ app.title = 'Prostate cancer survival prediction with AI'
 
 app.layout = html.Div([
     html.A([
-	    html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true',
-		     style={"width": "100%", "margin-bottom": "25px"})],
-	    href='http://med.stanford.edu/xinglab.html', 
-	    target='_blank'),
+	    html.Img(
+		    src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true',
+		    style={
+			    "width": "100%",
+			    "margin-bottom": "25px"
+		    })
+    ],href='http://med.stanford.edu/xinglab.html',target='_blank'),
     dcc.Markdown("## Predict prostate cancer survival with AI"),
     html.P([
 	    'This model allows you to predict 10-year overall survival in patients with prostate cancer.', 
