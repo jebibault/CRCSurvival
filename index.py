@@ -9,27 +9,11 @@ style = {'maxWidth': '960px', 'margin': 'auto'}
 
 app.title = 'Prostate cancer survival prediction with AI'
 
-layout = dict(
-    autosize=True,
-    automargin=True,
-    margin=dict(l=30, r=30, b=20, t=40),
-    hovermode="closest",
-    plot_bgcolor="#F9F9F9",
-    paper_bgcolor="#F9F9F9",
-    legend=dict(font=dict(size=10), orientation="h"),
-    title="Satellite Overview",
-    mapbox=dict(
-        accesstoken=mapbox_access_token,
-        style="light",
-        center=dict(lon=-78.05, lat=42.54),
-        zoom=7,
-    ),
-)
-
 app.layout = html.Div([
     html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true',
              style={
-                 "width": "100%"
+                 "width": "100%",
+                 "margin-bottom": "25px"
              }
             ),
     dcc.Markdown("# Predict prostate cancer survival with AI"),
