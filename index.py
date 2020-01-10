@@ -28,9 +28,9 @@ app.layout = html.Div([
     #dcc.Markdown("""This model allows you to predict 10-year overall survival in patients with prostate cancer."""),
     dcc.Tabs(id='tabs', value='tab-intro', parent_className='custom-tabs', className='custom-tabs-container', children=[
         dcc.Tab(label='Introduction', value='tab-intro', className='custom-tab', selected_className='custom-tab--selected'),
-        dcc.Tab(label='Methods', value='tab-explain', className='custom-tab', selected_className='custom-tab--selected'),
+        dcc.Tab(label='How was the model created?', value='tab-explain', className='custom-tab', selected_className='custom-tab--selected'),
         dcc.Tab(label='Performances', value='tab-evaluate', className='custom-tab', selected_className='custom-tab--selected'),
-        dcc.Tab(label='Predict', value='tab-predict', className='custom-tab', selected_className='custom-tab--selected')
+        dcc.Tab(label='Predict survival', value='tab-predict', className='custom-tab', selected_className='custom-tab--selected')
     ]),
     html.Div(id='tabs-content-classes'),
 ], style=style)
