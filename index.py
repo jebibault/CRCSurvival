@@ -24,9 +24,7 @@ app.layout = html.Div([
         dcc.Tab(label='Performances', value='tab-evaluate'),
         dcc.Tab(label='Predict', value='tab-predict')
     ], colors={
-        "border": "maroon",
-        "primary": "white",
-        "background": "silver"
+        "border": "maroon"
     }),
     html.Div(id='tabs-content'),
 ], style=style)
