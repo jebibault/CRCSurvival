@@ -66,8 +66,8 @@ html.Div([
 		)
 ]),
 dcc.Markdown("""
-	#### The 20 most important features predicting survival (according to SHAP values:)
-	The SHAP values are a way to estimate the contribution of a feature to the prediction performed by the model.
+	#### The 20 most important features predicting survival
+	The SHAP value is a way to estimate the contribution of a feature to the prediction performed by the model.
 	- Feature importance: Variables are ranked in descending order.
 	- Impact: The horizontal location shows whether the effect of that value is associated with a higher or lower prediction.
 	- Original value: Color shows whether that variable is high (in red) or low (in blue) for that observation.
