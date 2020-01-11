@@ -12,14 +12,13 @@ style = {
 app.title = 'Prostate cancer survival prediction with AI'
 
 app.layout = html.Div([
-    html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true',style={"width": "100%","margin-bottom": "25px"}),
+    html.A([html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true', style={'width' : '100%', 'margin-bottom': '15px', 'margin-top': '25px'})], href='http://med.stanford.edu/xinglab.html', target='_blank'),
     dcc.Markdown("## Predict prostate cancer survival with AI"),
     html.P([
 	    'This model allows you to predict 10-year overall survival in patients with prostate cancer.', 
 	    html.Br(),
 	    html.Br(),
 	    html.Br()]),
-    #dcc.Markdown("""This model allows you to predict 10-year overall survival in patients with prostate cancer."""),
     dcc.Tabs(id='tabs', value='tab-intro', parent_className='custom-tabs', className='custom-tabs-container', children=[
         dcc.Tab(label='Introduction', value='tab-intro', className='custom-tab', selected_className='custom-tab--selected'),
         dcc.Tab(label='Methods', value='tab-explain', className='custom-tab', selected_className='custom-tab--selected'),
