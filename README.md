@@ -18,14 +18,13 @@ model
 - 10yOSmodel.pkl - the XGBoost model used for prediction
 
 tabs
-- intro.py - The code for the intro tab.
-- explain.py - The code for the 'Creation' tab.
-- evaluate.py - The code for the 'Model performances' tab.
-- predict.py - The code for the 'Predict' tab.
+- intro.py - The code for the intro tab
+- explain.py - The code for the 'Creation' tab
+- evaluate.py - The code for the 'Model performances' tab
+- predict.py - The code for the 'Predict' tab
 
 main app
 - app.py - Initiates the Dash app
 - index.py - The main Dash code with the layout and callback
 - Procfile - The Procfile for Heroku
 - requirements.txt - The requirements.txt file for Heroku
-
