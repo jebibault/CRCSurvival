@@ -8,10 +8,14 @@ layout = [
 dcc.Markdown("""
 #### What is this model for?"""),
 html.P([
-	'The management of prostate cancer that is detected on the basis of prostate-specific antigen (PSA) levels remains controversial. In the United States alone, each year, an estimated 180,890 new cases will be diagnosed and 26,120 men will die from the disease. PSA testing has resulted in a significant increase in the diagnosis and treatment of prostate cancer, but many men do not benefit from intervention because the disease is either indolent or disseminated at diagnosis. Prostate cancer often progresses slowly, and many men die of competing causes.', 
+	'The management of prostate cancer that is detected on the basis of prostate-specific antigen (PSA) levels remains controversial. In the United States alone, each year, an estimated 180,890 new cases will be diagnosed and 26,120 men will die from the disease. PSA testing has resulted in a significant increase in the diagnosis and treatment of prostate cancer.',
 	html.Br(),
 	html.Br(),
-	'In order to assess whether a patient with prostate cancer could actually benefit from cancer treatment, and not die from another cause, we created a model to predict 10-year overall survival. This model was trained on data from the prospective randomized multicenter trial PLCO that assessed the interest of prostate cancer screening with annual PSA testing for 6 years and digital rectal examination for 4 years. In this trial, 76,693 men at 10 U.S. study centers were randomly assigned to receive either annual screening (38,343 subjects) or usual care as the control (38,350 subjects).',
+	'Many men do not benefit from treatment because the disease is either indolent or disseminated at diagnosis. Because prostate cancer progresses slowly, patients often die of competing causes.', 
+	html.Br(),
+	html.Br(),
+	'In order to assess whether a patient with prostate cancer could actually benefit from cancer treatment, and not die from another cause, we created a model to predict 10-year overall survival. This model was trained on data from the prospective randomized multicenter trial PLCO that assessed the interest of prostate cancer screening with annual PSA testing for 6 years and digital rectal examination for 4 years. In this trial, 76,693 men at 10 U.S. study centers were randomly assigned to receive either annual screening (n=38,343) or usual care as the control (n=38,350).',
+	html.Br(),
 	html.Br(),
 	'To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=8,776).',
 	html.Br(),
