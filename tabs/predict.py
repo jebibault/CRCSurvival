@@ -1,9 +1,16 @@
+from plotly.tools import mpl_to_plotly
 from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
 import pickle
 import numpy as np
 import pandas as pd
+import shap
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.use('agg')
+import base64
+from io import BytesIO
 
 from app import app
 
@@ -360,8 +367,8 @@ layout = html.Div([
   html.P([html.Br()]),  
   html.P([html.Br()]),
   html.Div(html.P(['The predicted probability of dying, from any cause, within 10 years from prostate cancer diagnosis is:']), style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large'}),
-  html.Div(id='prediction-content', style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large'}),
-  html.P([html.Br()]),  
+  html.Div(id='prediction-content', style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large', 'text-align': 'center'}),
+  html.Div(html.P(['This chart shows the most important features associated with a higher (red) or lower (blue) risk of dying.']), style={'text-align': 'center'}),
   html.P([html.Br()])
 ])
 
@@ -443,6 +450,15 @@ def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleas
   y_pred_proba = model.predict_proba(df)[:,1]
   y_pred = float(y_pred_proba) * 100
   y_pred = np.round(y_pred, 2)
-  results = f'{y_pred}%.'
+  results = f'{y_pred}%'
 
-  return results
+  explainer = shap.TreeExplainer(model)
+  shap_values = explainer.shap_values(df)
+  shap.force_plot(explainer.expected_value, shap_values, df, matplotlib=True, show=False)
+  buf = BytesIO()
+  plt.savefig(buf, format="png")
+  data = base64.b64encode(buf.getbuffer()).decode("ascii")
+  displ = html.Div(html.P([html.Br(), html.Br(), html.Br()]))
+  graph = html.Img(src='data:image/png;base64,{}'.format(data), style={'width' : '100%'})
+
+  return results, displ, graph
