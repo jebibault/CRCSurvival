@@ -90,16 +90,17 @@ layout = html.Div([
     type='number',
     value=''),
 
-  dcc.Markdown('###### How were you treated?'),
+  dcc.Markdown('###### What was the initial primary treatment performed?'),
   dcc.Dropdown(
     id='treatment',
     options=[
         {'label': 'Prostatectomy', 'value': '1'},
-        {'label': 'Radiation therapy', 'value': '2'},
-        {'label': 'Hormone therapy', 'value': '3'},
-        {'label': 'Other ablative treatment', 'value': '4'},
-        {'label': 'Non-curative treatment', 'value': '5'},
-        {'label': 'Pending', 'value': '8'}
+        {'label': 'Radiation therapy without prostatectomy', 'value': '2'},
+        {'label': 'Radiation therapy and hormone therapy, without prostatectomy', 'value': '3'},
+        {'label': 'Hormone therapy, without prostatectomy or radiation', 'value': '4'},
+        {'label': 'Other ablative treatment', 'value': '5'},
+        {'label': 'Non-curative treatment', 'value': '6'},
+        {'label': 'Do not know', 'value': '10'}
     ],
     value=''
   ),
@@ -361,6 +362,7 @@ layout = html.Div([
 
   html.P([html.Br()]),  
   html.P([html.Br()]),
+  html.Div(html.P(['The predicted probability of dying, from any cause, within 10 years from prostate cancer diagnosis is:']), style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large'}),
   html.Div(id='prediction-content', style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large'}),
   html.P([html.Br()]),  
   html.P([html.Br()])
@@ -436,14 +438,14 @@ def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleas
   current_bmi = weight / (height*height)
 
   df = pd.DataFrame(
-    columns=['t_stage','n_stage','m_stage','gleason_score','psa_at_diagnosis','education','current_smoker','pack_years','current_bmi','history_of_arthritis','history_of_bronchitis','history_of_diabetes','history_of_emphysema','history_of_heart_attack','history_of_hypertension','history_of_liver_disease','history_of_osteoporosis','history_of_stroke','history_of_prostatitis','income','weight_gain','history_of_cholesterol','physical_activity','work_activity','hair_pattern','nocturia','treatment','age_at_diagnosis'],
-    data=[[t_stage, n_stage, m_stage, gleason_score, psa_at_diagnosis, education, current_smoker, pack_years, current_bmi, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, history_of_prostatitis, income, weight_gain, history_of_cholesterol, physical_activity, work_activity, hair_pattern, nocturia, treatment, age_at_diagnosis]]
+    columns=['t_stage','n_stage','m_stage','gleason_score','psa_at_diagnosis','treatment','education','current_smoker','pack_years','current_bmi','history_of_arthritis','history_of_bronchitis','history_of_diabetes','history_of_emphysema','history_of_heart_attack','history_of_hypertension','history_of_liver_disease','history_of_osteoporosis','history_of_stroke','history_of_prostatitis','income','weight_gain','history_of_cholesterol','physical_activity','work_activity','hair_pattern','nocturia','age_at_diagnosis'],
+    data=[[t_stage, n_stage, m_stage, gleason_score, psa_at_diagnosis, treatment, education, current_smoker, pack_years, current_bmi, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, history_of_prostatitis, income, weight_gain, history_of_cholesterol, physical_activity, work_activity, hair_pattern, nocturia, age_at_diagnosis]]
     )
 
   model = pickle.load(open('model/10yOSmodel.pkl', 'rb'))
   y_pred_proba = model.predict_proba(df)[:,1]
   y_pred = float(y_pred_proba) * 100
   y_pred = np.round(y_pred, 2)
-  results = f'The predicted probability of dying, from any cause, within 10 years from prostate cancer diagnosis is {y_pred}%.'
+  results = f'{y_pred}%.'
 
   return results

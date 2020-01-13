@@ -12,7 +12,7 @@ layout = html.Div(
 		html.Br(),
 		'In order to assess whether a patient with prostate cancer could actually benefit from cancer treatment, and not die from another cause, we created a model to predict 10-year overall survival. This model was trained on data from the prospective randomized multicenter trial PLCO that assessed the interest of prostate cancer screening with annual PSA testing for 6 years and digital rectal examination for 4 years. In this trial, 76,693 men at 10 U.S. study centers were randomly assigned to receive either annual screening (38,343 subjects) or usual care as the control (38,350 subjects).',
 		html.Br(),
-		'To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=13,738).',
+		'To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=8,776).',
 		html.Br(),
 		html.Br(),
 		html.Br(),
