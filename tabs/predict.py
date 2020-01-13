@@ -15,11 +15,7 @@ layout = html.Div([
   dcc.Markdown('#### Please answer these 30 questions to predict 10-year overall survival'),
   dcc.Markdown('Each form must be carefully filled out to obtain the prediction.'),
   html.P([html.Br()]),
-
-  #html.Div(id='prediction-content', style={'fontWeight': 'bold'}),
-
   dcc.Markdown('#### Prostate cancer history'),
-
   dcc.Markdown('###### Age at diagnosis (years)'),
   dcc.Input(
     id='age_at_diagnosis',
