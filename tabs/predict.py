@@ -12,7 +12,8 @@ style = {'padding': '1.5em'}
 layout = html.Div([
   html.P([html.Br()]),
   html.P([html.Br()]),
-  dcc.Markdown('##### Please answer these 30 questions to predict 10-year overall survival'),
+  dcc.Markdown('#### Please answer these 30 questions to predict 10-year overall survival'),
+  dcc.Markdown('Each form must be carefully filled to obtain the prediction.'),
   html.P([html.Br()]),
 
   #html.Div(id='prediction-content', style={'fontWeight': 'bold'}),
