@@ -171,7 +171,7 @@ layout = html.Div([
 
   dcc.Markdown('###### Number of drinks of alcohol per day'),
   dcc.Input(
-    id='alcohol_consumption',
+    id='alcohol',
     placeholder='Enter a value',
     type='number',
     value=''),
@@ -407,12 +407,13 @@ layout = html.Div([
      Input('history_of_cholesterol', 'value'),
      Input('physical_activity', 'value'),
      Input('work_activity', 'value'),
+     Input('alcohol', 'value'),
      Input('income', 'value'),
      Input('education', 'value'),
      Input('hair_pattern', 'value'),
      Input('weight_gain', 'value')])
 
-def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleason_score, treatment, nocturia, height, weight, current_smoker, years_smoking, packs, history_of_prostatitis, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, history_of_cholesterol, physical_activity, work_activity, income, education, hair_pattern, weight_gain):
+def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleason_score, treatment, nocturia, height, weight, current_smoker, years_smoking, packs, history_of_prostatitis, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, history_of_cholesterol, physical_activity, work_activity, alcohol, income, education, hair_pattern, weight_gain):
 
   age_at_diagnosis = float(age_at_diagnosis)
   psa_at_diagnosis = float(psa_at_diagnosis)
@@ -440,6 +441,7 @@ def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleas
   education = int(float(education))
   hair_pattern = int(float(hair_pattern))
   weight_gain = int(float(weight_gain))
+  alcohol = float(alcohol)
 
   packs = float(packs)
   years_smoking = float(years_smoking)
@@ -447,7 +449,7 @@ def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleas
   height = float(height)
   pack_years = packs * years_smoking
   current_bmi = weight / (height*height)
-  alcohol_consumption = alcohol_consumption * 14
+  alcohol_consumption = alcohol * 14
 
   df = pd.DataFrame(
     columns=['t_stage','n_stage','m_stage','gleason_score','psa_at_diagnosis','treatment','education','current_smoker','pack_years','current_bmi','history_of_arthritis','history_of_bronchitis','history_of_diabetes','history_of_emphysema','history_of_heart_attack','history_of_hypertension','history_of_liver_disease','history_of_osteoporosis','history_of_stroke','history_of_prostatitis','alcohol_consumption','income','weight_gain','history_of_cholesterol','physical_activity','work_activity','hair_pattern','nocturia','age_at_diagnosis'],
