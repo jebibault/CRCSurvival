@@ -17,7 +17,7 @@ layout = [
 	html.P([]),
 	html.A("Andriole GL et al., Journal of the National Cancer Institute, 2012", href='https://www.ncbi.nlm.nih.gov/pubmed/22228146', target="_blank", style={'font-weight': 'bold', 'color': '#820000', 'text-decoration': 'none'}),
 	html.P([]),
-	html.A("Pinsky PF et al., Cancer, 2017", href='https://www.ncbi.nlm.nih.gov/pubmed/19297565', target="_blank", style={'font-weight': 'bold', 'color': '#820000', 'text-decoration': 'none'}),
+	html.A("Pinsky PF et al., Cancer, 2017", href='https://www.ncbi.nlm.nih.gov/pubmed/27911486', target="_blank", style={'font-weight': 'bold', 'color': '#820000', 'text-decoration': 'none'}),
 	html.P([html.Br()]),
 	dcc.Markdown("""
 	#### Data
