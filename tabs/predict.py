@@ -20,17 +20,18 @@ layout = html.Div([
   html.P([html.Br()]),
   html.P([html.Br()]),
   dcc.Markdown('#### Please answer these 30 questions to predict 10-year overall survival'),
+  dcc.Markdown('#### Answers must reflect data at diagnosis.'),
   dcc.Markdown('Each form must be carefully filled out to obtain the prediction.'),
   html.P([html.Br()]),
   dcc.Markdown('#### Prostate cancer history'),
-  dcc.Markdown('###### Age at diagnosis (years)'),
+  dcc.Markdown('###### Age (years)'),
   dcc.Input(
     id='age_at_diagnosis',
     placeholder='Enter a value',
     type='number',
     value=''),
   
-  dcc.Markdown('###### PSA at diagnosis (ng/mL)'),
+  dcc.Markdown('###### PSA (ng/mL)'),
   dcc.Input(
     id='psa_at_diagnosis',
     placeholder='Enter a value',
