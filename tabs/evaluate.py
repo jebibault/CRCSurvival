@@ -50,7 +50,7 @@ dcc.Markdown("""
 	- Feature importance: Variables are ranked in descending order.
 	- Impact: The horizontal location shows whether the feature is associated with a higher or lower risk of dying.
 	- Original value: Color shows whether that variable is high (in red) or low (in blue) for that observation.
-	- Correlation: As an example, in this model younger patients (blue dots) at diagnosis have a lower risk of dyng within 10 years (negative SHAP values).
+	- Correlation: As an example, in this model younger patients (blue dots) at diagnosis have a lower risk of dying within 10 years (negative SHAP values).
 	"""),
 html.Div([
 	html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/10yOSTreeExplainer.png?raw=true')], style={'text-align' : 'center'})
