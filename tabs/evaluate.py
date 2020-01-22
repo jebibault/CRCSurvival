@@ -11,11 +11,11 @@ dcc.Markdown("""
 
 	|  Metric      |  Result   |  Definition					                                       |
 	|--------------|-----------|-----------------------------------------------------------------------|
-	| Accuracy     | 91.34%    |  Number of correct predictions / total number of input samples        |
-	| Precision    | 80.70%    |  Number of correct positive predictions / number of positive samples  |
-	| Recall       | 78.51%    |  Number of correct positive results / number of all positive samples  |
-	| ROC AUC      | 93.04%    |  See below                                                            |
-	| PR AUC       | 86.83%    |  See below                                                            |
+	| Accuracy     | 87.55%    |  Number of correct predictions / total number of input samples        |
+	| Precision    | 66.19%    |  Number of correct positive predictions / number of positive samples  |
+	| Recall       | 86.13%    |  Number of correct positive results / number of all positive samples  |
+	| ROC AUC      | 94.31%    |  See below                                                            |
+	| PR AUC       | 87.73%    |  See below                                                            |
 
 	"""),
 dcc.Markdown("""
