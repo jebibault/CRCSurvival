@@ -3,7 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 from app import app, server
-from tabs import intro, predict, explain, evaluate
+from tabs import intro, predictOS, predictCSS, explain, evaluate
 
 style = {
     'maxWidth': '900px', 
@@ -15,7 +15,7 @@ app.layout = html.Div([
     html.A([html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true', style={'width' : '100%', 'margin-bottom': '15px', 'margin-top': '25px'})], href='http://med.stanford.edu/xinglab.html', target='_blank'),
     dcc.Markdown("## Predict prostate cancer survival with AI"),
     html.P([
-	    'This model allows you to predict 10-year overall survival in patients with prostate cancer.', 
+	    'This model allows you to predict 10-year cancer-specific and overall survival in patients with prostate cancer.', 
 	    html.Br(),
 	    html.Br(),
 	    html.Br()]),
@@ -23,7 +23,8 @@ app.layout = html.Div([
         dcc.Tab(label='Introduction', value='tab-intro', className='custom-tab', selected_className='custom-tab--selected'),
         dcc.Tab(label='Methods', value='tab-explain', className='custom-tab', selected_className='custom-tab--selected'),
         dcc.Tab(label='Performances', value='tab-evaluate', className='custom-tab', selected_className='custom-tab--selected'),
-        dcc.Tab(label='Predict survival', value='tab-predict', className='custom-tab', selected_className='custom-tab--selected')
+        dcc.Tab(label='Predict cancer-specific survival', value='tab-predictCSS', className='custom-tab', selected_className='custom-tab--selected'),
+        dcc.Tab(label='Predict overall survival', value='tab-predictCSS', className='custom-tab', selected_className='custom-tab--selected')
     ]),
     html.Div(id='tabs-content-classes'),
 ], style=style)
@@ -32,7 +33,8 @@ app.layout = html.Div([
               [Input('tabs', 'value')])
 def render_content(tab):
     if tab == 'tab-intro': return intro.layout
-    elif tab == 'tab-predict': return predict.layout
+    elif tab == 'tab-predictOS': return predictOS.layout
+    elif tab == 'tab-predictCSS': return predictCSS.layout
     elif tab == 'tab-explain': return explain.layout
     elif tab == 'tab-evaluate': return evaluate.layout
 

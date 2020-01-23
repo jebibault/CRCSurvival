@@ -24,7 +24,7 @@ layout = html.Div([
   dcc.Markdown('Each form must be carefully filled out to obtain the prediction.'),
   html.P([html.Br()]),
   dcc.Markdown('#### Prostate cancer history'),
-  dcc.Markdown('###### Age (years)'),
+  dcc.Markdown('###### Age at diagnosis (years)'),
   dcc.Input(
     id='age_at_diagnosis',
     placeholder='Enter a value',
