@@ -374,7 +374,7 @@ layout = html.Div([
 
   html.P([html.Br()]),  
   html.P([html.Br()]),
-  html.Div(html.P(['The predicted probability of dying, from any cause, within 10 years from prostate cancer diagnosis is:']), style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large'}),
+  html.Div(html.P(['The predicted probability of dying from prostate cancer within 10 years after diagnosis is:']), style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large'}),
   html.Div(id='prediction-content', style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large', 'text-align': 'center'}),
   html.Div(html.P(['This chart shows the most important features associated with a higher (red) or lower (blue) risk of dying.']), style={'text-align': 'center'}),
   html.P([html.Br()])
