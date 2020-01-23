@@ -12,16 +12,18 @@ assets
 - favicon
 
 figures
-- figures used to explain the performances of the model in the webapp
+- logo of the app
 
 model
-- 10yOSmodel.pkl - the XGBoost model used for prediction
+- 10yCSSmodel.pkl - the XGBoost model used for cancer-specific survival prediction
+- 10yOSmodel.pkl - the XGBoost model used for overall survival prediction
 
 tabs
 - intro.py - The code for the intro tab
 - explain.py - The code for the 'Creation' tab
 - evaluate.py - The code for the 'Model performances' tab
-- predict.py - The code for the 'Predict' tab
+- predictCSS.py - The code for the 'Predict cancer-specific survival' tab
+- predictOS.py - The code for the 'Predict overall survival' tab
 
 main app
 - app.py - Initiates the Dash app
