@@ -14,7 +14,7 @@ assets
 figures
 - logo of the app
 
-model
+models
 - 10yCSSmodel.pkl - the XGBoost model used for cancer-specific survival prediction
 - 10yOSmodel.pkl - the XGBoost model used for overall survival prediction
 
