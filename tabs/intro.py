@@ -10,7 +10,7 @@ html.P([html.Br()]),
 dcc.Markdown("""
 #### What is this model for?"""),
 html.P([
-	'The management of prostate cancer that is detected on the basis of prostate-specific antigen (PSA) levels remains controversial. In the United States alone, each year, an estimated 180,890 new cases will be diagnosed and 26,120 men will die from the disease. PSA testing has resulted in a significant increase in the diagnosis and treatment of prostate cancer.',
+	'In the United States alone, each year, an estimated 180,890 new cases will be diagnosed and 26,120 men will die from the disease. PSA testing has resulted in a significant increase in the diagnosis and treatment of prostate cancer. But the management of prostate cancer that is detected on the basis of prostate-specific antigen (PSA) levels remains controversial. ',
 	html.Br(),
 	html.Br(),
 	'Many men do not benefit from treatment because the disease is either indolent or disseminated at diagnosis. Because prostate cancer progresses slowly, patients often die of competing causes.', 
@@ -37,7 +37,7 @@ dcc.Markdown("""
 	html.Br(),
 	dcc.Markdown("""
 	#### Data
-	The data with a 13-years median follow-up was obtained from the National Cancer Institute Cancer Data Access System:"""),
+	The data were obtained from the National Cancer Institute Cancer Data Access System:"""),
 	html.A("National Cancer Institute Cancer Data Access System", href='https://cdas.cancer.gov/plco/', target="_blank", style={'font-weight': 'bold', 'color': '#820000', 'text-decoration': 'none'}),
 	html.Br(),
 	html.Br(),
@@ -45,7 +45,7 @@ dcc.Markdown("""
 	#### Models creation
 	To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=8,776). 
 	The dataset was split into a training (n=7,021) and a testing (n=1,755) dataset.
-	XGBoost was used to predict 10-year cancer-specific and overall survival. Hyperparameters were tuned with Bayesian Optimization	in a nested cross-validation manner. Performances were evaluated on the test dataset."""),
+	XGBoost was used to predict 10-year cancer-specific and overall survival. Hyperparameters were tuned with Bayesian Optimization	in a nested cross-validation manner. Performances were evaluated on the test dataset with the bootstrap procedure."""),
 	html.Br(),
 	dcc.Markdown("""
 	#### Models metrics: cancer-specific survival (CSS) and overall survival (OS)
