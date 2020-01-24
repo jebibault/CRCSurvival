@@ -20,7 +20,7 @@ app.layout = html.Div([
 	    html.Br(),
 	    html.Br()]),
     dcc.Tabs(id='tabs', value='tab-intro', parent_className='custom-tabs', className='custom-tabs-container', children=[
-        dcc.Tab(label='Introduction', value='tab-intro', className='custom-tab', selected_className='custom-tab--selected'),
+        dcc.Tab(label='About', value='tab-intro', className='custom-tab', selected_className='custom-tab--selected'),
         dcc.Tab(label='Predict cancer-specific survival', value='tab-predictCSS', className='custom-tab', selected_className='custom-tab--selected'),
         dcc.Tab(label='Predict overall survival', value='tab-predictOS', className='custom-tab', selected_className='custom-tab--selected')
     ]),

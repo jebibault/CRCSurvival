@@ -58,7 +58,6 @@ dcc.Markdown("""
 	| Recall       |  Number of correct positive results / number of all positive samples                      |   77.86   |   86.13   |
 	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds |   95.34   |   94.31   |
 	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       |   81.93   |   87.73   |
-
 	"""),
 	html.Br(),
 	html.Br(),

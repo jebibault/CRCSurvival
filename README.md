@@ -19,7 +19,7 @@ models
 - 10yOSmodel.pkl - the XGBoost model used for overall survival prediction
 
 tabs
-- intro.py - The code for the intro tab
+- intro.py - The code for the 'About' tab
 - predictCSS.py - The code for the 'Predict cancer-specific survival' tab
 - predictOS.py - The code for the 'Predict overall survival' tab
 
