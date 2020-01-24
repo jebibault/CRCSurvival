@@ -3,7 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 from app import app, server
-from tabs import intro, predictOS, predictCSS, explain, evaluate
+from tabs import intro, predictOS, predictCSS
 
 style = {
     'maxWidth': '900px', 
@@ -33,8 +33,6 @@ def render_content(tab):
     if tab == 'tab-intro': return intro.layout
     elif tab == 'tab-predictOS': return predictOS.layout
     elif tab == 'tab-predictCSS': return predictCSS.layout
-    elif tab == 'tab-explain': return explain.layout
-    elif tab == 'tab-evaluate': return evaluate.layout
 
 if __name__ == '__main__':
     app.run_server(debug=True)
