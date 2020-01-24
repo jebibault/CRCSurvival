@@ -20,8 +20,6 @@ models
 
 tabs
 - intro.py - The code for the intro tab
-- explain.py - The code for the 'Creation' tab
-- evaluate.py - The code for the 'Model performances' tab
 - predictCSS.py - The code for the 'Predict cancer-specific survival' tab
 - predictOS.py - The code for the 'Predict overall survival' tab
 
