@@ -19,7 +19,7 @@ style = {'padding': '1.5em'}
 layout = html.Div([
   html.P([html.Br()]),
   html.P([html.Br()]),
-  dcc.Markdown('#### Please answer these 30 questions to predict 10-year overall survival'),
+  dcc.Markdown('#### Please answer these 30 questions to predict 10-year cancer-specific survival'),
   dcc.Markdown('#### Answers must reflect data at diagnosis.'),
   dcc.Markdown('Each form must be carefully filled out to obtain the prediction.'),
   html.P([html.Br()]),
@@ -375,13 +375,13 @@ layout = html.Div([
   html.P([html.Br()]),  
   html.P([html.Br()]),
   html.Div(html.P(['The predicted probability of dying from prostate cancer within 10 years after diagnosis is:']), style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large'}),
-  html.Div(id='prediction-content', style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large', 'text-align': 'center'}),
+  html.Div(id='CSSprediction-content', style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large', 'text-align': 'center'}),
   html.Div(html.P(['This chart shows the most important features associated with a higher (red) or lower (blue) risk of dying.']), style={'text-align': 'center'}),
   html.P([html.Br()])
 ])
 
 @app.callback(
-    Output('prediction-content', 'children'),
+    Output('CSSprediction-content', 'children'),
     [Input('age_at_diagnosis', 'value'),
      Input('psa_at_diagnosis', 'value'),
      Input('t_stage', 'value'),
@@ -457,7 +457,7 @@ def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleas
     data=[[t_stage, n_stage, m_stage, gleason_score, psa_at_diagnosis, treatment, education, current_smoker, pack_years, current_bmi, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, history_of_prostatitis, alcohol_consumption, income, weight_gain, history_of_cholesterol, physical_activity, work_activity, hair_pattern, nocturia, age_at_diagnosis]]
     )
 
-  model = pickle.load(open('model/10yOSmodel.pkl', 'rb'))
+  model = pickle.load(open('model/10yCSSmodel.pkl', 'rb'))
   y_pred_proba = model.predict_proba(df)[:,1]
   y_pred = float(y_pred_proba) * 100
   y_pred = np.round(y_pred, 2)
