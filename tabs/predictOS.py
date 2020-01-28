@@ -457,7 +457,7 @@ def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleas
     data=[[t_stage, n_stage, m_stage, gleason_score, psa_at_diagnosis, treatment, education, current_smoker, pack_years, current_bmi, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, history_of_prostatitis, alcohol_consumption, income, weight_gain, history_of_cholesterol, physical_activity, work_activity, hair_pattern, nocturia, age_at_diagnosis]]
     )
 
-  model = pickle.load(open('model/10yOSmodel.pkl', 'rb'))
+  model = pickle.load(open('models/10yOSmodel.pkl', 'rb'))
   y_pred_proba = model.predict_proba(df)[:,1]
   y_pred = float(y_pred_proba) * 100
   y_pred = np.round(y_pred, 2)
