@@ -51,13 +51,14 @@ dcc.Markdown("""
 	#### Models metrics: cancer-specific survival (CSS) and overall survival (OS)
 	Evaluating models trained on unbalanced classes (the two classes we need to predict are not present in the dataset at the same ratio) can be difficult. We provide several methods to assess the performances of the model. All metrics are reported on the test dataset.
 
-	|  Metric      |  Definition				 	                                                           |  CSS (%)  |   OS (%)  |
-	|--------------|-------------------------------------------------------------------------------------------|-----------|-----------|
-	| Accuracy     |  Number of correct predictions / total number of input samples                            |   98.29   |   87.55   |
-	| Precision    |  Number of correct positive predictions / number of positive samples                      |   85.00   |   66.19   |
-	| Recall       |  Number of correct positive results / number of all positive samples                      |   77.86   |   86.13   |
-	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds |   95.34   |   94.31   |
-	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       |   81.93   |   87.73   |
+	|  Metric      |  Definition				 	                                                           |     CSS      |       OS      |
+	|--------------|-------------------------------------------------------------------------------------------|--------------|---------------|
+	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.98 (±0.01) |   0.86 (±0.09)|
+	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.80 (±0.1)  |   0.65 (±0.03)|
+	| Recall       |  Number of correct positive predictions / number of all positive samples                  | 0.60 (±0.08) |   0.79 (±0.04)|
+	| f1-score     |  Harmonic mean of the precision and the recall                                            | 0.66 ((±0.07)|   0.72 (±0.03)|
+	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds | 0.80 (±0.04) |   0.84 (±0.02)|
+	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       | 0.54 (±0.07) |   0.59 (±0.03)|
 	"""),
 	html.Br(),
 	html.Br(),
