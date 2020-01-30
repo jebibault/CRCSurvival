@@ -9,12 +9,12 @@ style = {
     'maxWidth': '900px', 
     'margin': 'auto'}
 
-app.scripts.config.serve_locally = False
+app.scripts.config.serve_locally = True
 app.scripts.append_script({
-    'external_url': 'https://cdn.jsdelivr.net/gh/jebibault/jebibault.github.io/ProstateCancerSurvival/blob/master/assets/async_src.js'
+    'external_url': 'https://cdn.jsdelivr.net/gh/jebibault/ProstateCancerSurvival/assets/async_src.js'
     })
 app.scripts.append_script({
-    'external_url': 'https://cdn.jsdelivr.net/gh/jebibault/jebibault.github.io/ProstateCancerSurvival/blob/master/assets/gtag.js'
+    'external_url': 'https://cdn.jsdelivr.net/gh/jebibault/ProstateCancerSurvival/assets/gtag.js'
     })
 
 app.title = 'Prostate cancer survival prediction with AI'
