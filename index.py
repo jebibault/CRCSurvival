@@ -9,7 +9,7 @@ style = {
     'maxWidth': '900px', 
     'margin': 'auto'}
 
-app.scripts.config.serve_locally = True
+app.scripts.config.serve_locally = False
 app.scripts.append_script({
     'external_url': 'https://cdn.jsdelivr.net/gh/jebibault/ProstateCancerSurvival/assets/async_src.js'
     })
