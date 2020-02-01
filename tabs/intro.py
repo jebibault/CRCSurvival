@@ -56,7 +56,7 @@ dcc.Markdown("""
 	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.98 (±0.01) |   0.86 (±0.09)|
 	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.80 (±0.1)  |   0.65 (±0.03)|
 	| Recall       |  Number of correct positive predictions / number of all positive samples                  | 0.60 (±0.08) |   0.79 (±0.04)|
-	| f1-score     |  Harmonic mean of the precision and the recall                                            | 0.66 ((±0.07)|   0.72 (±0.03)|
+	| f1-score     |  Harmonic mean of the precision and the recall                                            | 0.66 (±0.07) |   0.72 (±0.03)|
 	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds | 0.80 (±0.04) |   0.84 (±0.02)|
 	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       | 0.54 (±0.07) |   0.59 (±0.03)|
 	"""),
