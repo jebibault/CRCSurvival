@@ -8,8 +8,8 @@ server = app.server
 
 app.scripts.config.serve_locally = False
 app.scripts.append_script({
-    'external_url': 'https://cdn.jsdelivr.net/gh/jebibault/ProstateCancerSurvival/assets/async_src.js'
+    'external_url': 'https://cdn.jsdelivr.net/gh/jebibault/CRCSurvival/assets/async_src.js'
     })
 app.scripts.append_script({
-    'external_url': 'https://cdn.jsdelivr.net/gh/jebibault/ProstateCancerSurvival/assets/gtag.js'
+    'external_url': 'https://cdn.jsdelivr.net/gh/jebibault/CRCSurvival/assets/gtag.js'
     })

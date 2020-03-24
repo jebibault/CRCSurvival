@@ -9,7 +9,7 @@ style = {
     'maxWidth': '900px', 
     'margin': 'auto'}
 
-app.title = 'Colorectal cancer survival prediction with AI'
+app.title = 'Colorectal cancer survival prediction with interpretable AI'
 
 app.layout = html.Div([
     html.A([html.Img(src='https://github.com/jebibault/ProstateCancerSurvival/blob/master/figures/logo.png?raw=true', style={'width' : '100%', 'margin-bottom': '15px', 'margin-top': '25px'})], href='http://med.stanford.edu/xinglab.html', target='_blank'),

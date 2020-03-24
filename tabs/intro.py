@@ -8,7 +8,7 @@ layout = [
 html.P([html.Br()]),
 html.P([html.Br()]),
 dcc.Markdown("""
-#### What are these model for?"""),
+#### What is this model for?"""),
 html.P([
 	'Colorectal cancer (CRC) is the third most commonly diagnosed cancer in males and the second in females, with 1.8 million new cases and almost 861,000 deaths in 2018 according to the World Health Organization GLOBOCAN database. In the US alone, approximately 147,950 new cases of large bowel cancer are diagnosed, . Annually, approximately 53,200 Americans die of CRC, accounting for approximately 8 percent of all cancer deaths.', 
 	html.Br(),
