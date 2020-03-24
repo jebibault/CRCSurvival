@@ -418,7 +418,6 @@ dcc.Markdown('###### What is the location?'),
      Input('cancer_location', 'value'),
      Input('cancer_side', 'value'),
      Input('family_history', 'value'),
-     Input('family_history_age', 'value'),
      Input('curative_chemotherapy', 'value'),
      Input('curative_radiotherapy', 'value'),
      Input('curative_surgery', 'value'),
@@ -445,7 +444,7 @@ dcc.Markdown('###### What is the location?'),
      Input('age_at_diagnosis', 'value')
      ])
 
-def predict(t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, cancer_location, cancer_side, family_history, family_history_age, curative_chemotherapy, curative_radiotherapy, curative_surgery, neoadjuvant_treatment, education, packs, years_smoking, weight, height, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, alcohol, income, history_of_cholesterol, physical_activity, work_activity, age_at_diagnosis):
+def predict(t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, cancer_location, cancer_side, family_history, curative_chemotherapy, curative_radiotherapy, curative_surgery, neoadjuvant_treatment, education, packs, years_smoking, weight, height, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, alcohol, income, history_of_cholesterol, physical_activity, work_activity, age_at_diagnosis):
 
   t_stage = int(float(t_stage))
   n_stage = int(float(n_stage))
