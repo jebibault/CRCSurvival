@@ -10,31 +10,28 @@ html.P([html.Br()]),
 dcc.Markdown("""
 #### What are these model for?"""),
 html.P([
-	'In the United States alone, each year, an estimated 180,890 new cases will be diagnosed and 26,120 men will die from the disease. PSA testing has resulted in a significant increase in the diagnosis and treatment of prostate cancer. But the management of prostate cancer that is detected on the basis of prostate-specific antigen (PSA) levels remains controversial. ',
+	'Colorectal cancer (CRC) is the third most commonly diagnosed cancer in males and the second in females, with 1.8 million new cases and almost 861,000 deaths in 2018 according to the World Health Organization GLOBOCAN database. In the US alone, approximately 147,950 new cases of large bowel cancer are diagnosed, . Annually, approximately 53,200 Americans die of CRC, accounting for approximately 8 percent of all cancer deaths.', 
 	html.Br(),
 	html.Br(),
-	'Many men do not benefit from treatment because the disease is either indolent or disseminated at diagnosis. Because prostate cancer progresses slowly, patients often die of competing causes.', 
-	html.Br(),
-	html.Br(),
-	'In order to assess whether a patient with prostate cancer could actually benefit from cancer treatment, and not die from another cause, we created models to predict 10-year cancer-specific and overall survival.',
+	'In order to be able to better personalize treatment strategies, we created an interpretable AI model to predict 10-year cancer-specific survival of patients with CRC.',
 	html.Br(),
 	html.Br(),
 ]),
 dcc.Markdown("""
-	#### The PLCO Trial
-	The Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial was conducted
-	to assess the role of prostate cancer screening on survival. From 1993 through 2001, 76,693 men at 10 
-	U.S. study centers were randomized to receive either annual screening (38,343 subjects) or usual care as the control (38,350 subjects). 
-	Men in the screening group were offered annual PSA testing for 6 years and digital rectal examination for 4 years. 
-	The subjects and health care providers received the results and decided on the type of follow-up evaluation. 
-	Results of the trial were published in three articles:"""),
-	html.A("Andriole GL et al., New England Journal of Medicine, 2009", href='https://www.ncbi.nlm.nih.gov/pubmed/19297565', target="_blank", style={'font-weight': 'bold', 'color': '#820000', 'text-decoration': 'none'}),
-	html.P([]),
-	html.A("Andriole GL et al., Journal of the National Cancer Institute, 2012", href='https://www.ncbi.nlm.nih.gov/pubmed/22228146', target="_blank", style={'font-weight': 'bold', 'color': '#820000', 'text-decoration': 'none'}),
-	html.P([]),
-	html.A("Pinsky PF et al., Cancer, 2017", href='https://www.ncbi.nlm.nih.gov/pubmed/27911486', target="_blank", style={'font-weight': 'bold', 'color': '#820000', 'text-decoration': 'none'}),
+#### The PLCO Trial"""),
+html.P([
+	'From 1993 through 2001, 154,900 men and women 55 to 74 years of age were randomized either to screening with flexible sigmoidoscopy, with a repeat screening at 3 or 5 years, or to usual care. Significant reductions were observed in the incidence of both distal colorectal cancer (479 cases in the intervention group vs. 669 cases in the usual-care group; relative risk, 0.71; 95% CI, 0.64 to 0.80; P<0.001) and proximal colorectal cancer (512 cases vs. 595 cases; relative risk, 0.86; 95% CI, 0.76 to 0.97; P=0.01).', 
 	html.Br(),
 	html.Br(),
+	'There were also fewer death in the screening arm of the trial: 2.9 deaths from colorectal cancer per 10,000 person-years in the intervention group (252 deaths), as compared with 3.9 per 10,000 person-years in the usual-care group (341 deaths), which represents a 26% reduction (relative risk, 0.74; 95% CI, 0.63 to 0.87; P<0.001).',
+	html.Br(),
+	html.Br(),
+	'Results of the trial were published in 2012:',
+	html.Br(),
+	html.A("Schoen RE et al., New England Journal of Medicine, 2012", href='https://www.ncbi.nlm.nih.gov/pubmed/22612596', target="_blank", style={'font-weight': 'bold', 'color': '#820000', 'text-decoration': 'none'}),
+	html.Br(),
+	html.Br(),
+]),
 	dcc.Markdown("""
 	#### Data
 	The data were obtained from the National Cancer Institute Cancer Data Access System:"""),
@@ -42,23 +39,23 @@ dcc.Markdown("""
 	html.Br(),
 	html.Br(),
 	dcc.Markdown("""
-	#### Models creation
-	To build this model we selected the patients that were diagnosed with prostate cancer during follow-up (n=8,776). 
-	The dataset was split into a training (n=7,021) and a testing (n=1,755) dataset.
-	XGBoost was used to predict 10-year cancer-specific and overall survival. Hyperparameters were tuned with Bayesian Optimization	in a nested cross-validation manner. Performances were evaluated on the test dataset with the bootstrap procedure."""),
+	#### Model creation
+	To build this model we selected the patients that were diagnosed with CRC cancer during follow-up (n=2,359). 
+	The dataset was split into a training (n=1,887) and a testing (n=472) dataset.
+	XGBoost was used to predict 10-year cancer-specific. Hyperparameters were tuned with Bayesian Optimization	in a nested cross-validation manner. Performances were evaluated on the test dataset with the bootstrap procedure."""),
 	html.Br(),
 	dcc.Markdown("""
-	#### Models metrics: cancer-specific survival (CSS) and overall survival (OS)
+	#### Model metrics: Cancer-specific survival (CSS)
 	Evaluating models trained on unbalanced classes (the two classes we need to predict are not present in the dataset at the same ratio) can be difficult. We provide several methods to assess the performances of the model. All metrics are reported on the test dataset.
 
-	|  Metric      |  Definition				 	                                                           |     CSS      |       OS      |
-	|--------------|-------------------------------------------------------------------------------------------|--------------|---------------|
-	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.98 (±0.01) |   0.86 (±0.09)|
-	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.80 (±0.1)  |   0.65 (±0.03)|
-	| Recall       |  Number of correct positive predictions / number of all positive samples                  | 0.60 (±0.08) |   0.79 (±0.04)|
-	| f1-score     |  Harmonic mean of the precision and the recall                                            | 0.66 (±0.07) |   0.72 (±0.03)|
-	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds | 0.80 (±0.04) |   0.84 (±0.02)|
-	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       | 0.54 (±0.07) |   0.59 (±0.03)|
+	|  Metric      |  Definition				 	                                                           |     CSS      |
+	|--------------|-------------------------------------------------------------------------------------------|--------------|
+	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.80 (±0.04) |
+	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.62 (±0.05) |
+	| Recall       |  Number of correct positive predictions / number of all positive samples                  | 0.87 (±0.07) |
+	| f1-score     |  Harmonic mean of the precision and the recall                                            | 0.72 (±0.07) |
+	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds | 0.82 (±0.04) |
+	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       | 0.59 (±0.08) |
 	"""),
 	html.Br(),
 	html.Br(),

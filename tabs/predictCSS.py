@@ -19,21 +19,14 @@ style = {'padding': '1.5em'}
 layout = html.Div([
   html.P([html.Br()]),
   html.P([html.Br()]),
-  dcc.Markdown('#### Please answer these 30 questions to predict 10-year cancer-specific survival'),
+  dcc.Markdown('#### Please answer these 33 questions to predict 10-year cancer-specific survival'),
   dcc.Markdown('#### Answers must reflect data at diagnosis'),
   dcc.Markdown('Each form must be carefully filled out to obtain the prediction'),
   html.P([html.Br()]),
-  dcc.Markdown('#### Prostate cancer history'),
+  dcc.Markdown('#### Colorectal cancer history'),
   dcc.Markdown('###### Age at diagnosis (years)'),
   dcc.Input(
     id='age_at_diagnosis',
-    placeholder='Enter a value',
-    type='number',
-    value=''),
-  
-  dcc.Markdown('###### PSA (ng/mL)'),
-  dcc.Input(
-    id='psa_at_diagnosis',
     placeholder='Enter a value',
     type='number',
     value=''),
@@ -43,21 +36,11 @@ layout = html.Div([
     id='t_stage',
     options=[
         {'label': 'T0', 'value': '0'},
+        {'label': 'Tis', 'value': '20'},
         {'label': 'T1', 'value': '100'},
-        {'label': 'T1a', 'value': '110'},
-        {'label': 'T1b', 'value': '120'},
-        {'label': 'T1c', 'value': '130'},
         {'label': 'T2', 'value': '200'},
-        {'label': 'T2a', 'value': '210'},
-        {'label': 'T2b', 'value': '220'},
-        {'label': 'T2c', 'value': '230'},
         {'label': 'T3', 'value': '300'},
-        {'label': 'T3a', 'value': '310'},
-        {'label': 'T3b', 'value': '320'},
-        {'label': 'T3c', 'value': '330'},
         {'label': 'T4', 'value': '400'},
-        {'label': 'T4a', 'value': '410'},
-        {'label': 'T4b', 'value': '420'},
         {'label': 'Tx', 'value': '999'}
     ],
     value=''
@@ -87,38 +70,117 @@ layout = html.Div([
     ],
     value=''
   ),
-  
-  dcc.Markdown('###### Gleason Score'),
-  dcc.Input(
-    id='gleason_score',
-    placeholder='Enter a value',
-    type='number',
-    value=''),
 
-  dcc.Markdown('###### What was the initial primary treatment performed?'),
+  dcc.Markdown('###### Tumor Grade'),
   dcc.Dropdown(
-    id='treatment',
+    id='tumor_grade',
     options=[
-        {'label': 'Prostatectomy', 'value': '1'},
-        {'label': 'Radiation therapy without prostatectomy', 'value': '2'},
-        {'label': 'Radiation therapy and hormone therapy, without prostatectomy', 'value': '3'},
-        {'label': 'Hormone therapy, without prostatectomy or radiation', 'value': '4'},
-        {'label': 'Other ablative treatment', 'value': '5'},
-        {'label': 'Non-curative treatment', 'value': '6'},
-        {'label': 'Do not know', 'value': '10'}
+        {'label': 'Grade Cannot Be Assessed (GX)', 'value': '1'},
+        {'label': 'Well Differentiated (G1)', 'value': '2'},
+        {'label': 'Moderately Differentiated (G2)', 'value': '3'},
+        {'label': 'Poorly Differentiated (G3)', 'value': '4'},
+        {'label': 'Undifferentiated (G4)', 'value': '5'},
+        {'label': 'Not available', 'value': '99'}
     ],
     value=''
   ),
 
-  dcc.Markdown('###### How often do you wake up to urinate?'),
+  dcc.Markdown('###### What is the type of cancer?'),
   dcc.Dropdown(
-    id='nocturia',
+    id='cancer_type',
     options=[
-        {'label': 'Never', 'value': '0'},
-        {'label': 'Once', 'value': '1'},
-        {'label': 'Twice', 'value': '2'},
-        {'label': 'Thrice ', 'value': '3'},
-        {'label': 'Four times or more', 'value': '4'},
+        {'label': 'Colorectal cancer', 'value': '1'},
+        {'label': 'Colorectal carcinoid', 'value': '2'}
+    ],
+    value=''
+  ),
+
+  dcc.Markdown('###### What is the histology?'),
+  dcc.Dropdown(
+    id='histology',
+    options=[
+        {'label': 'Adenocarcinoma, not otherwise specified', 'value': '2'},
+        {'label': 'Mucinous Adenocarcinoma', 'value': '3'},
+        {'label': 'Signet Ring Cell Carcinoma', 'value': '4'},
+        {'label': 'Squamous Cell Carcinoma', 'value': '5'},
+        {'label': 'Adenosquamous Carcinoma', 'value': '6'},
+        {'label': 'Undifferentiated Carcinoma', 'value': '8'},
+        {'label': 'Carcinoma', 'value': '9'},
+        {'label': 'Carcinoma, not otherwise specified', 'value': '31'},
+        {'label': 'Adenocarcinoid', 'value': '36'},
+        {'label': 'Carcinoid/Neuroendocrine Carcinoma', 'value': '37'},
+        {'label': 'Carcinosarcoma/Sarcoma/GIST (Gastroinstestinal Stromal Tumor)', 'value': '39'},
+        {'label': 'Not available', 'value': '99'}
+    ],
+    value=''
+  ),
+
+dcc.Markdown('###### What is the location?'),
+  dcc.Dropdown(
+    id='cancer_location',
+    options=[
+        {'label': 'Rectum', 'value': '1'},
+        {'label': 'Rectosigmoid junction', 'value': '2'},
+        {'label': 'Sigmoid colon', 'value': '3'},
+        {'label': 'Descending colon', 'value': '4'},
+        {'label': 'Splenic flexure of colon', 'value': '5'},
+        {'label': 'Transverse colon', 'value': '6'},
+        {'label': 'Hepatic flexure of colon', 'value': '7'},
+        {'label': 'Ascending colon', 'value': '8'},
+        {'label': 'Cecum', 'value': '10'},
+        {'label': 'Colon, not otherwise specified', 'value': '12'}
+    ],
+    value=''
+  ),
+
+  dcc.Markdown('###### On which side is the cancer?'),
+  dcc.Dropdown(
+    id='cancer_side',
+    options=[
+        {'label': 'Distal', 'value': '1'},
+        {'label': 'Proximal', 'value': '2'},
+        {'label': 'Unclear', 'value': '3'}
+
+    ],
+    value=''
+  ),
+
+  dcc.Markdown('###### Was surgery performed in the initial treatment?'),
+  dcc.Dropdown(
+    id='curative_surgery',
+    options=[
+        {'label': 'No', 'value': '0'},
+        {'label': 'Yes', 'value': '1'}
+    ],
+    value=''
+  ),
+
+  dcc.Markdown('###### If yes, was any curative treatment performed before surgery (neoadjuvant)?'),
+  dcc.Dropdown(
+    id='neoadjuvant_treatment',
+    options=[
+        {'label': 'No', 'value': '0'},
+        {'label': 'Yes', 'value': '1'}
+    ],
+    value=''
+  ),
+
+  dcc.Markdown('###### Was radiotherapy performed in the initial treatment?'),
+  dcc.Dropdown(
+    id='curative_radiotherapy',
+    options=[
+        {'label': 'No', 'value': '0'},
+        {'label': 'Yes', 'value': '1'}
+    ],
+    value=''
+  ),
+
+  dcc.Markdown('###### Did you receive chemotherapy in the initial treatment?'),
+  dcc.Dropdown(
+    id='curative_chemotherapy',
+    options=[
+        {'label': 'No', 'value': '0'},
+        {'label': 'Yes', 'value': '1'}
     ],
     value=''
   ),
@@ -126,6 +188,17 @@ layout = html.Div([
   html.P([html.Br()]),
   html.P([html.Br()]),
   dcc.Markdown('#### Medical history'),
+
+  dcc.Markdown('###### Do you have a firs-degree family history of colorectal cancer?'),
+  dcc.Dropdown(
+    id='family_history',
+    options=[
+        {'label': 'No', 'value': '0'},
+        {'label': 'Yes, immediate family', 'value': '1'},
+        {'label': 'Possibly, relative or cancer type not clear', 'value': '9'}
+    ],
+    value=''
+  ),
 
   dcc.Markdown('###### Height (in meters)'),
   dcc.Input(
@@ -140,17 +213,6 @@ layout = html.Div([
     placeholder='Enter a value in kilograms',
     type='number',
     value=''),
-
-  dcc.Markdown('###### What is your smoking status?'),
-  dcc.Dropdown(
-    id='current_smoker',
-    options=[
-        {'label': 'Never smoked cigarettes', 'value': '0'},
-        {'label': 'Current cigarette smoker', 'value': '1'},
-        {'label': 'Former cigarette smoker', 'value': '2'}
-    ],
-    value='',
-  ),
   
   dcc.Markdown("""
     ###### Years of smoking 
@@ -177,15 +239,6 @@ layout = html.Div([
     type='number',
     value=''),
 
-  dcc.Markdown('###### Do you have an history of prostatitis?'),
-  dcc.Dropdown(
-    id='history_of_prostatitis',
-    options=[
-        {'label': 'No', 'value': '0'},
-        {'label': 'Yes', 'value': '1'}
-    ],
-    value='',
-  ),
   dcc.Markdown('###### Do you have an history of arthritis?'),
   dcc.Dropdown(
     id='history_of_arthritis',
@@ -346,35 +399,9 @@ layout = html.Div([
     value='',
   ),
 
-  dcc.Markdown('###### What was you hair pattern at age 45?'),
-  dcc.Dropdown(
-    id='hair_pattern',
-    options=[
-        {'label': 'No balding', 'value': '0'},
-        {'label': 'Mild forehead recession', 'value': '1'},
-        {'label': 'Mild forehead recession + Small Top Balding', 'value': '2'},
-        {'label': 'Forehead + top balding', 'value': '3'},
-        {'label': 'Hair only on sides and back', 'value': '4'}
-    ],
-    value='',
-  ),
-
-  dcc.Markdown('###### What is your weight gain pattern?'),
-  dcc.Dropdown(
-    id='weight_gain',
-    options=[
-        {'label': 'I do not gain weight', 'value': '1'},
-        {'label': 'Around chest and shoulders', 'value': '2'},
-        {'label': 'Around waist and stomach', 'value': '3'},
-        {'label': 'Around hips and thighs', 'value': '4'},
-        {'label': 'Equally all over', 'value': '5'}
-    ],
-    value='',
-  ),
-
   html.P([html.Br()]),  
   html.P([html.Br()]),
-  html.Div(html.P(['The predicted probability of dying from prostate cancer within 10 years after diagnosis is:']), style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large'}),
+  html.Div(html.P(['The predicted probability of dying from colorectal cancer within 10 years after diagnosis is:']), style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large'}),
   html.Div(id='CSSprediction-content', style={'fontWeight': 'bold', 'color': '#820000', 'font-size': 'large', 'text-align': 'center'}),
   html.Div(html.P(['This chart shows the most important features associated with a higher (red) or lower (blue) risk of dying.']), style={'text-align': 'center'}),
   html.P([html.Br()])
@@ -382,20 +409,25 @@ layout = html.Div([
 
 @app.callback(
     Output('CSSprediction-content', 'children'),
-    [Input('age_at_diagnosis', 'value'),
-     Input('psa_at_diagnosis', 'value'),
-     Input('t_stage', 'value'),
+    [Input('t_stage', 'value'),
      Input('n_stage', 'value'),
      Input('m_stage', 'value'),
-     Input('gleason_score', 'value'),
-     Input('treatment', 'value'),
-     Input('nocturia', 'value'),
-     Input('height', 'value'),
-     Input('weight', 'value'),
-     Input('current_smoker', 'value'),
+     Input('tumor_grade', 'value'),
+     Input('cancer_type', 'value'),
+     Input('histology', 'value'),
+     Input('cancer_location', 'value'),
+     Input('cancer_side', 'value'),
+     Input('family_history', 'value'),
+     Input('family_history_age', 'value'),
+     Input('curative_chemotherapy', 'value'),
+     Input('curative_radiotherapy', 'value'),
+     Input('curative_surgery', 'value'),
+     Input('neoadjuvant_treatment', 'value'),
+     Input('education', 'value'),
      Input('years_smoking', 'value'),
      Input('packs', 'value'),
-     Input('history_of_prostatitis', 'value'),
+     Input('height', 'value'),
+     Input('weight', 'value'),
      Input('history_of_arthritis', 'value'),
      Input('history_of_bronchitis', 'value'),
      Input('history_of_diabetes', 'value'),
@@ -405,27 +437,29 @@ layout = html.Div([
      Input('history_of_liver_disease', 'value'),
      Input('history_of_osteoporosis', 'value'),
      Input('history_of_stroke', 'value'),
+     Input('alcohol', 'value'),
+     Input('income', 'value'),
      Input('history_of_cholesterol', 'value'),
      Input('physical_activity', 'value'),
      Input('work_activity', 'value'),
-     Input('alcohol', 'value'),
-     Input('income', 'value'),
-     Input('education', 'value'),
-     Input('hair_pattern', 'value'),
-     Input('weight_gain', 'value')])
+     Input('age_at_diagnosis', 'value')
+     ])
 
-def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleason_score, treatment, nocturia, height, weight, current_smoker, years_smoking, packs, history_of_prostatitis, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, history_of_cholesterol, physical_activity, work_activity, alcohol, income, education, hair_pattern, weight_gain):
+def predict(t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, cancer_location, cancer_side, family_history, family_history_age, curative_chemotherapy, curative_radiotherapy, curative_surgery, neoadjuvant_treatment, education, packs, years_smoking, weight, height, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, alcohol, income, history_of_cholesterol, physical_activity, work_activity, age_at_diagnosis):
 
-  age_at_diagnosis = float(age_at_diagnosis)
-  psa_at_diagnosis = float(psa_at_diagnosis)
   t_stage = int(float(t_stage))
   n_stage = int(float(n_stage))
   m_stage = int(float(m_stage))
-  gleason_score = int(float(gleason_score))
-  treatment = int(float(treatment))
-  nocturia = int(float(nocturia))
-  current_smoker = int(float(current_smoker))
-  history_of_prostatitis = int(float(history_of_prostatitis))
+  tumor_grade = int(float(tumor_grade))
+  cancer_type = int(float(cancer_type))
+  histology = int(float(histology))
+  cancer_location = int(float(cancer_location))
+  cancer_side = int(float(cancer_side))
+  family_history = int(float(family_history))
+  curative_chemotherapy = int(float(curative_chemotherapy))
+  curative_radiotherapy = int(float(curative_radiotherapy))
+  curative_surgery = int(float(curative_surgery))
+  neoadjuvant_treatment = int(float(neoadjuvant_treatment))
   history_of_arthritis = int(float(history_of_arthritis))
   history_of_bronchitis = int(float(history_of_bronchitis))
   history_of_diabetes = int(float(history_of_diabetes))
@@ -440,10 +474,7 @@ def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleas
   work_activity = int(float(work_activity))
   income = int(float(income))
   education = int(float(education))
-  hair_pattern = int(float(hair_pattern))
-  weight_gain = int(float(weight_gain))
   alcohol = float(alcohol)
-
   packs = float(packs)
   years_smoking = float(years_smoking)
   weight = float(weight)
@@ -453,8 +484,8 @@ def predict(age_at_diagnosis, psa_at_diagnosis, t_stage, n_stage, m_stage, gleas
   alcohol_consumption = alcohol * 14
 
   df = pd.DataFrame(
-    columns=['t_stage','n_stage','m_stage','gleason_score','psa_at_diagnosis','treatment','education','current_smoker','pack_years','current_bmi','history_of_arthritis','history_of_bronchitis','history_of_diabetes','history_of_emphysema','history_of_heart_attack','history_of_hypertension','history_of_liver_disease','history_of_osteoporosis','history_of_stroke','history_of_prostatitis','alcohol_consumption','income','weight_gain','history_of_cholesterol','physical_activity','work_activity','hair_pattern','nocturia','age_at_diagnosis'],
-    data=[[t_stage, n_stage, m_stage, gleason_score, psa_at_diagnosis, treatment, education, current_smoker, pack_years, current_bmi, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, history_of_prostatitis, alcohol_consumption, income, weight_gain, history_of_cholesterol, physical_activity, work_activity, hair_pattern, nocturia, age_at_diagnosis]]
+    columns=['t_stage','n_stage','m_stage','tumor_grade','cancer_type','histology','cancer_location','cancer_side','family_history','curative_chemotherapy','curative_radiotherapy','curative_surgery','neoadjuvant_treatment','education','pack_years','current_bmi','history_of_arthritis','history_of_bronchitis','history_of_diabetes','history_of_emphysema','history_of_heart_attack','history_of_hypertension','history_of_liver_disease','history_of_osteoporosis','history_of_stroke','alcohol_consumption','income','history_of_cholesterol','physical_activity','work_activity','age_at_diagnosis'],
+    data=[[t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, cancer_location, cancer_side, family_history, curative_chemotherapy, curative_radiotherapy, curative_surgery, neoadjuvant_treatment, education, pack_years, current_bmi, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, alcohol_consumption, income, history_of_cholesterol, physical_activity, work_activity, age_at_diagnosis]]
     )
 
   model = pickle.load(open('models/10yCSSmodel.pkl', 'rb'))
