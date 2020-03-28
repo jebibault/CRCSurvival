@@ -19,7 +19,7 @@ style = {'padding': '1.5em'}
 layout = html.Div([
   html.P([html.Br()]),
   html.P([html.Br()]),
-  dcc.Markdown('#### Please answer these 33 questions to predict 10-year cancer-specific survival'),
+  dcc.Markdown('#### Please answer these 32 questions to predict 10-year cancer-specific survival'),
   dcc.Markdown('#### Answers must reflect data at diagnosis'),
   dcc.Markdown('Each form must be carefully filled out to obtain the prediction'),
   html.P([html.Br()]),
@@ -133,18 +133,6 @@ dcc.Markdown('###### What is the location?'),
     value=''
   ),
 
-  dcc.Markdown('###### On which side is the cancer?'),
-  dcc.Dropdown(
-    id='cancer_side',
-    options=[
-        {'label': 'Distal', 'value': '1'},
-        {'label': 'Proximal', 'value': '2'},
-        {'label': 'Unclear', 'value': '3'}
-
-    ],
-    value=''
-  ),
-
   dcc.Markdown('###### Was surgery performed in the initial treatment?'),
   dcc.Dropdown(
     id='curative_surgery',
@@ -155,7 +143,7 @@ dcc.Markdown('###### What is the location?'),
     value=''
   ),
 
-  dcc.Markdown('###### If yes, was any curative treatment performed before surgery (neoadjuvant)?'),
+  dcc.Markdown('###### If yes, was any neoadjuvant treatment performed before surgery?'),
   dcc.Dropdown(
     id='neoadjuvant_treatment',
     options=[
@@ -189,7 +177,7 @@ dcc.Markdown('###### What is the location?'),
   html.P([html.Br()]),
   dcc.Markdown('#### Medical history'),
 
-  dcc.Markdown('###### Do you have a firs-degree family history of colorectal cancer?'),
+  dcc.Markdown('###### Do you have a first-degree family history of colorectal cancer?'),
   dcc.Dropdown(
     id='family_history',
     options=[
@@ -416,7 +404,6 @@ dcc.Markdown('###### What is the location?'),
      Input('cancer_type', 'value'),
      Input('histology', 'value'),
      Input('cancer_location', 'value'),
-     Input('cancer_side', 'value'),
      Input('family_history', 'value'),
      Input('curative_chemotherapy', 'value'),
      Input('curative_radiotherapy', 'value'),
@@ -444,7 +431,7 @@ dcc.Markdown('###### What is the location?'),
      Input('age_at_diagnosis', 'value')
      ])
 
-def predict(t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, cancer_location, cancer_side, family_history, curative_chemotherapy, curative_radiotherapy, curative_surgery, neoadjuvant_treatment, education, packs, years_smoking, weight, height, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, alcohol, income, history_of_cholesterol, physical_activity, work_activity, age_at_diagnosis):
+def predict(t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, cancer_location, family_history, curative_chemotherapy, curative_radiotherapy, curative_surgery, neoadjuvant_treatment, education, packs, years_smoking, weight, height, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, alcohol, income, history_of_cholesterol, physical_activity, work_activity, age_at_diagnosis):
 
   t_stage = int(float(t_stage))
   n_stage = int(float(n_stage))
@@ -453,7 +440,6 @@ def predict(t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, canc
   cancer_type = int(float(cancer_type))
   histology = int(float(histology))
   cancer_location = int(float(cancer_location))
-  cancer_side = int(float(cancer_side))
   family_history = int(float(family_history))
   curative_chemotherapy = int(float(curative_chemotherapy))
   curative_radiotherapy = int(float(curative_radiotherapy))
@@ -483,8 +469,8 @@ def predict(t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, canc
   alcohol_consumption = alcohol * 14
 
   df = pd.DataFrame(
-    columns=['t_stage','n_stage','m_stage','tumor_grade','cancer_type','histology','cancer_location','cancer_side','family_history','curative_chemotherapy','curative_radiotherapy','curative_surgery','neoadjuvant_treatment','education','pack_years','current_bmi','history_of_arthritis','history_of_bronchitis','history_of_diabetes','history_of_emphysema','history_of_heart_attack','history_of_hypertension','history_of_liver_disease','history_of_osteoporosis','history_of_stroke','alcohol_consumption','income','history_of_cholesterol','physical_activity','work_activity','age_at_diagnosis'],
-    data=[[t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, cancer_location, cancer_side, family_history, curative_chemotherapy, curative_radiotherapy, curative_surgery, neoadjuvant_treatment, education, pack_years, current_bmi, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, alcohol_consumption, income, history_of_cholesterol, physical_activity, work_activity, age_at_diagnosis]]
+    columns=['t_stage','n_stage','m_stage','tumor_grade','cancer_type','histology','cancer_location','family_history','curative_chemotherapy','curative_radiotherapy','curative_surgery','neoadjuvant_treatment','education','pack_years','current_bmi','history_of_arthritis','history_of_bronchitis','history_of_diabetes','history_of_emphysema','history_of_heart_attack','history_of_hypertension','history_of_liver_disease','history_of_osteoporosis','history_of_stroke','alcohol_consumption','income','history_of_cholesterol','physical_activity','work_activity','age_at_diagnosis'],
+    data=[[t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, cancer_location, family_history, curative_chemotherapy, curative_radiotherapy, curative_surgery, neoadjuvant_treatment, education, pack_years, current_bmi, history_of_arthritis, history_of_bronchitis, history_of_diabetes, history_of_emphysema, history_of_heart_attack, history_of_hypertension, history_of_liver_disease, history_of_osteoporosis, history_of_stroke, alcohol_consumption, income, history_of_cholesterol, physical_activity, work_activity, age_at_diagnosis]]
     )
 
   model = pickle.load(open('models/10yCSSmodel.pkl', 'rb'))

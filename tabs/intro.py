@@ -53,12 +53,12 @@ html.P([
 
 	|  Metric      |  Definition				 	                                                           |     CSS      |
 	|--------------|-------------------------------------------------------------------------------------------|--------------|
-	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.80 (±0.04) |
-	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.62 (±0.05) |
-	| Recall       |  Number of correct positive predictions / number of all positive samples                  | 0.87 (±0.07) |
-	| f1-score     |  Harmonic mean of the precision and the recall                                            | 0.72 (±0.07) |
-	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds | 0.82 (±0.04) |
-	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       | 0.59 (±0.08) |
+	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.83 (±0.04) |
+	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.67 (±0.08) |
+	| Recall       |  Number of correct positive predictions / number of all positive samples                  | 0.85 (±0.07) |
+	| f1-score     |  Harmonic mean of the precision and the recall                                            | 0.75 (±0.07) |
+	| ROC AUC      |  Area under the curve of true positive rate and false positive rate at various thresholds | 0.84 (±0.04) |
+	| PR AUC       |  Area under the curve of precision and recall at various thresholds                       | 0.63 (±0.07) |
 	"""),
 	html.Br(),
 	html.Br(),
