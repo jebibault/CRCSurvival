@@ -227,7 +227,7 @@ dcc.Markdown('###### What is the location?'),
     type='number',
     value=''),
 
-  dcc.Markdown('###### Do you have an history of arthritis?'),
+  dcc.Markdown('###### Do you have a history of arthritis?'),
   dcc.Dropdown(
     id='history_of_arthritis',
     options=[
@@ -237,7 +237,7 @@ dcc.Markdown('###### What is the location?'),
     value='',
     ),
     
-  dcc.Markdown('###### Do you have an history of bronchitis?'),
+  dcc.Markdown('###### Do you have a history of bronchitis?'),
   dcc.Dropdown(
     id='history_of_bronchitis',
     options=[
@@ -247,7 +247,7 @@ dcc.Markdown('###### What is the location?'),
     value='',
     ),
     
-  dcc.Markdown('###### Do you have an history of diabetes?'),
+  dcc.Markdown('###### Do you have a history of diabetes?'),
   dcc.Dropdown(
     id='history_of_diabetes',
     options=[
@@ -257,7 +257,7 @@ dcc.Markdown('###### What is the location?'),
     value='',
     ),
 
-  dcc.Markdown('###### Do you have an history of emphysema?'),
+  dcc.Markdown('###### Do you have a history of emphysema?'),
   dcc.Dropdown(
     id='history_of_emphysema',
     options=[
@@ -267,7 +267,7 @@ dcc.Markdown('###### What is the location?'),
     value='',
     ),
 
-  dcc.Markdown('###### Do you have an history of heart attack?'),
+  dcc.Markdown('###### Do you have a history of heart attack?'),
   dcc.Dropdown(
     id='history_of_heart_attack',
     options=[
@@ -277,7 +277,7 @@ dcc.Markdown('###### What is the location?'),
     value='',
     ),
 
-  dcc.Markdown('###### Do you have an history of hypertension?'),
+  dcc.Markdown('###### Do you have a history of hypertension?'),
   dcc.Dropdown(
     id='history_of_hypertension',
     options=[
@@ -287,7 +287,7 @@ dcc.Markdown('###### What is the location?'),
     value='',
     ),
 
-  dcc.Markdown('###### Do you have an history of liver disease?'),
+  dcc.Markdown('###### Do you have a history of liver disease?'),
   dcc.Dropdown(
     id='history_of_liver_disease',
     options=[
@@ -297,7 +297,7 @@ dcc.Markdown('###### What is the location?'),
     value='',
     ),
 
-  dcc.Markdown('###### Do you have an history of osteoporosis?'),
+  dcc.Markdown('###### Do you have a history of osteoporosis?'),
   dcc.Dropdown(
     id='history_of_osteoporosis',
     options=[
@@ -307,7 +307,7 @@ dcc.Markdown('###### What is the location?'),
     value='',
     ),
 
-  dcc.Markdown('###### Do you have an history of stroke?'),
+  dcc.Markdown('###### Do you have a history of stroke?'),
   dcc.Dropdown(
     id='history_of_stroke',
     options=[
@@ -317,7 +317,7 @@ dcc.Markdown('###### What is the location?'),
     value='',
     ),
 
-  dcc.Markdown('###### Do you have an history of cholesterol?'),
+  dcc.Markdown('###### Do you have a history of cholesterol?'),
   dcc.Dropdown(
     id='history_of_cholesterol',
     options=[
