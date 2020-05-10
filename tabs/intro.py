@@ -13,7 +13,7 @@ html.P([
 	'Colorectal cancer (CRC) is the third most commonly diagnosed cancer in males and the second in females, with 1.8 million new cases and almost 861,000 deaths in 2018 according to the World Health Organization GLOBOCAN database. In the US alone, approximately 147,950 new cases of large bowel cancer are diagnosed annually and 53,200 Americans die of CRC, accounting for 8 percent of all cancer deaths.', 
 	html.Br(),
 	html.Br(),
-	'In order to be able to better personalize treatment strategies, we created an interpretable AI model to predict 10-year cancer-specific survival of patients with CRC.',
+	'In order to be able to better personalize treatment strategies, we created an interpretable AI model to predict the risk to die from colorectal cancer 10 year after diagnosis',
 	html.Br(),
 	html.Br(),
 ]),
@@ -45,13 +45,13 @@ html.P([
 	#### Model creation
 	To build this model we selected the patients that were diagnosed with CRC cancer during follow-up (n=2,359). 
 	The dataset was split into a training (n=1,887) and a testing (n=472) dataset.
-	XGBoost was used to predict 10-year cancer-specific. Hyperparameters were tuned with Bayesian Optimization	in a nested cross-validation manner. Performances were evaluated on the test dataset with the bootstrap procedure."""),
+	XGBoost was used to predict the risk to die from colorectal cancer 10 year after diagnosis. Hyperparameters were tuned with Bayesian Optimization	in a nested cross-validation manner. Performances were evaluated on the test dataset with the bootstrap procedure."""),
 	html.Br(),
 	dcc.Markdown("""
-	#### Model metrics: Cancer-specific survival (CSS)
+	#### Model metrics: risk to die from colorectal cancer 10 year after diagnosis
 	Evaluating models trained on unbalanced classes (the two classes we need to predict are not present in the dataset at the same ratio) can be difficult. We provide several methods to assess the performances of the model. All metrics are reported on the test dataset.
 
-	|  Metric      |  Definition				 	                                                           |     CSS      |
+	|  Metric      |  Definition				 	                                                           |     CRC      |
 	|--------------|-------------------------------------------------------------------------------------------|--------------|
 	| Accuracy     |  Number of correct predictions / total number of input samples                            | 0.83 (±0.04) |
 	| Precision    |  Number of correct positive predictions / number of positive predictions                  | 0.67 (±0.08) |

@@ -19,7 +19,7 @@ style = {'padding': '1.5em'}
 layout = html.Div([
   html.P([html.Br()]),
   html.P([html.Br()]),
-  dcc.Markdown('#### Please answer these 32 questions to predict 10-year cancer-specific survival'),
+  dcc.Markdown('#### Please answer these 32 questions to predict the risk to die from colorectal cancer 10 year after diagnosis'),
   dcc.Markdown('#### Answers must reflect data at diagnosis'),
   dcc.Markdown('Each form must be carefully filled out to obtain the prediction'),
   html.P([html.Br()]),
@@ -476,7 +476,7 @@ def predict(t_stage, n_stage, m_stage, tumor_grade, cancer_type, histology, canc
   model = pickle.load(open('models/10yCSSmodel.pkl', 'rb'))
   y_pred_proba = model.predict_proba(df)[:,1]
   y_pred = float(y_pred_proba) * 100
-  y_pred = np.round(y_pred, 2)
+  y_pred = np.round(y_pred, 0)
   results = f'{y_pred}%'
 
   explainer = shap.TreeExplainer(model)
